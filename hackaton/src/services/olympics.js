@@ -7,6 +7,6 @@ export async function getDisciplineData() {
         return await fetchFromApi('/disciplines')
 }
 
-export async function getEventsData() {
-        return await fetchFromApi('/events')
+export async function getEventsData(date) {
+        return await fetchFromApi(`/events${date}`)
 }

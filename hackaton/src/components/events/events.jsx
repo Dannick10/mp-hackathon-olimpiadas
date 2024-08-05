@@ -5,6 +5,7 @@ import { getDisciplineData, getEventsData } from "../../services/olympics";
 import Title from "../Title";
 import Card from "../Card";
 import EventCard from "../EventCard";
+import GameEvents from "../gameEvents/GameEvents";
 
 const Events = () => {
   const [data, setData] = useState([]);
@@ -26,9 +27,9 @@ const Events = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-3 m-8 p-7">
+    <div className="flex flex-col gap-3 relative max-w-[80vw]">
       {data.length !== 0 && data.map((event) => 
-      <EventCard key={event.id} date={event}/>
+      <GameEvents data={event}/>
     )
       }
     </div>

@@ -1,5 +1,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "../components/header/Header";
+
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +18,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className} data-theme="mytheme">
+        <Header />
+        <div className="py-24">
+          {children}</div>
+      </body>
     </html>
   );
 }

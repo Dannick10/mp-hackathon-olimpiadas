@@ -9,32 +9,42 @@ import { Navigation, Pagination } from "swiper/modules";
 
 const Events = () => {
   const [data, setData] = useState([]);
+  const [loading, Setloading] = useState(false)
+
   const getDay = new Date();
   const formatDate = `${getDay.getUTCFullYear()}-${(getDay.getUTCMonth() + 1)
     .toString()
     .padStart(2, "0")}-${getDay.getUTCDate().toString().padStart(2, "0")}`;
-  console.log(formatDate);
-
+ 
   useEffect(() => {
     const fetchData = async () => {
+      Setloading(true)
       try {
         const result = await getEventsData(`?date=${formatDate}`);
         setData(Object.values(result)[0]);
       } catch (error) {
         console.error(error);
       }
+      Setloading(false)
     };
 
     fetchData();
   }, [formatDate]);
 
+  console.log(data)
+
   return (
-    <div className=" gap-3 relative max-w-[80vw]">
+    <div className=" gap-3 relative w-full">
+      {loading? 
+      <div className="flex items-center justify-center bg-gray-800 h-[28em] p-8">
+      <span className="loading loading-bars m-auto w-20 text-blue-800"></span> 
+      </div>
+      :
       <Swiper
-         slidesPerView={1}
-         pagination={{ clickable: true }}
-         navigation
-         modules={[Navigation, Pagination]}
+      slidesPerView={1}
+      pagination={{ clickable: true }}
+      navigation
+      modules={[Navigation, Pagination]}
       >
         {data.length !== 0 &&
           data.map((event, index) => (
@@ -43,6 +53,7 @@ const Events = () => {
             </SwiperSlide>
           ))}
       </Swiper>
+        }
     </div>
   );
 };

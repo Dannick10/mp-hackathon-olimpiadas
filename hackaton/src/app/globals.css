@@ -9,3 +9,14 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
 }
+
+div.swiper-button-prev,
+div.swiper-button-next {
+   color: #D73434;
+}
+
+span.swiper-pagination-bullet{
+  color: #D73434;
+  background-color: #D73434;
+}
+

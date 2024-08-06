@@ -37,15 +37,15 @@ const ButtonHamburguer = () => {
           className="absolute flex justify-center right-0 top-0 h-screen bg-gray-100 p-2 w-80 cursor-auto"
           onClick={toggle}
         >
-          <ul className="space-y-8 py-20 text-xl font-semibold text-gray-800">
+          <ul className="space-y-8 py-20 text-xl text-center font-semibold text-gray-800">
             <li className="hover:text-red-500 cursor-pointer">
-              Mural das olimpiadas
+            world of the olympics
             </li>
-            <li className="hover:text-red-500 cursor-pointer">Competições</li>
+            <li className="hover:text-red-500 cursor-pointer">Competitions</li>
             <li className="hover:text-red-500 cursor-pointer">
-              Classificações
+            Ratings
             </li>
-            <li className="hover:text-red-500 cursor-pointer">Atletas</li>
+            <li className="hover:text-red-500 cursor-pointer">Athletes</li>
           </ul>
         </div>
       )}

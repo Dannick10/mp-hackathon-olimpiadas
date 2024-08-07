@@ -1,10 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const Title = ({letter}) => {
+const Title = ({ letter }) => {
+  return <h2 className="text-primary text-2xl">{letter}</h2>;
+};
 
-  return (
-    <h2 className='text-primary text-2xl'>{letter}</h2> 
-  )
-}
-
-export default Title
+export default Title;

@@ -4,8 +4,6 @@ import React, { useEffect, useState } from "react";
 import { getDisciplineData } from "../../services/olympics";
 import Title from "../Title";
 import Card from "../Card";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Mousewheel } from "swiper/modules";
 
 const Disciplines = () => {
   const [data, setData] = useState([]);

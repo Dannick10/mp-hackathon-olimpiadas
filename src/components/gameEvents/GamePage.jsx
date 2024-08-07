@@ -1,5 +1,6 @@
 import React from "react";
 import { IconeDate, ArenaIcone, TenisIcone } from "../../icons/icons";
+import Image from "next/image";
 
 const GamePage = ({ data }) => {
   const formatDate = (dateString) => {

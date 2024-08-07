@@ -16,7 +16,12 @@ const Card = ({ imgLight, imgDark, name, index, id }) => {
           } w-80 transition-colors md:flex-row md:w-[40em] cursor-pointer hover:brightness-105`}
         >
           <figure>
-            <Image src={imgDark} width={500} height={300} />
+            <Image
+              src={imgDark}
+              alt={`Image for ${name}`}
+              width={500}
+              height={300}
+            />
           </figure>
           <div className="card-body flex-col items-center justify-between">
             <h2 className="card-title text-base-100 flex-1">{name}</h2>

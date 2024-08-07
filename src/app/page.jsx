@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
 import Disciplines from "../components/disciplines/disciplines";
 import Events from "../components/events/events";
 import TitleComponent from "../components/Title/TitleComponent";

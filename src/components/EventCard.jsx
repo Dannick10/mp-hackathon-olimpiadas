@@ -3,7 +3,6 @@ import CategoryDisciplinesCard from "./categoryDisciplines";
 import Competitor from "./Competitor";
 
 const EventCard = ({ date }) => {
-
   return (
     <div className="flex justify-between w-full text-gray-900 relative flex-wrap p-2 ">
       <div className="flex flex-col justify-between h-48 top-0 md:sticky">
@@ -23,7 +22,9 @@ const EventCard = ({ date }) => {
               <thead className="sticky top-20 rounded-2xl bg-white">
                 <tr className="">
                   <th className="py-4">Posição</th>
-                  <th colSpan={2} className="py-4">Times</th>
+                  <th colSpan={2} className="py-4">
+                    Times
+                  </th>
                   <th className="py-4">Competidor</th>
                 </tr>
               </thead>

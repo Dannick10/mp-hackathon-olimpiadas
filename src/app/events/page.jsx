@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
 import { getEventsAllFilter, getEventsData } from "../../services/olympics";
 import GamePage from "../../components/gameEvents/GamePage";
 import { Arrow, IconeCompetition } from "../../icons/icons";
@@ -19,7 +18,7 @@ const Page = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const result = await getEventsData("");
+        const result = await getEventsAllFilter(`?page=${page}`);
         setData(Object.values(result)[0]);
         const pagination = Object.values(result)[2] || {};
         setTotalPages(pagination.last_page || 1);

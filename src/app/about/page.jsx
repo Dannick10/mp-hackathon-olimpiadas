@@ -8,16 +8,16 @@ const Page = () => {
       <p className="text-base-200 bg-primary p-2">Sobre o projeto</p>
       <div className="container mx-auto p-4 text-left">
         <h1 className="text-3xl font-bold mb-4">
-          Hackathon das Olimpíadas Paris 2024 do{" "}
+          Hackathon das Olimpíadas Paris 2024 do
           <Link href="https://codante.io" className="text-secondary underline">
             Codante
           </Link>
         </h1>
         <p>
-          Nós disponibilizamos uma{" "}
+          Nós disponibilizamos uma
           <Link href="https://docs.apis.codante.io/olympic-games" className="text-secondary underline">
             API com os dados oficiais das Olimpíadas Paris 2024
-          </Link>{" "}
+          </Link>
           e agora é com você!
         </p>
         <p>Crie uma aplicação que consuma esses dados e concorra a prêmios.</p>
@@ -38,12 +38,12 @@ const Page = () => {
           👉🏽 Registre sua participação
         </h3>
         <p>
-          Do dia <strong>29/07/2024</strong> ao dia <strong>07/08/2024</strong>{" "}
+          Do dia <strong>29/07/2024</strong> ao dia <strong>07/08/2024</strong>
           qualquer pessoa poderá participar gratuitamente desse hackathon. Basta
-          entrar no site do Codante, acessar a{" "}
+          entrar no site do Codante, acessar a
           <Link href="https://codante.io/mini-projetos/hackathon-olimpiadas" className="text-secondary underline">
             página oficial do hackathon
-          </Link>{" "}
+          </Link>
           e seguir o passo-a-passo:
         </p>
         <ol className="list-decimal list-inside mb-4">
@@ -52,11 +52,11 @@ const Page = () => {
             Clicar em <strong>"Participar"</strong> do projeto
           </li>
           <li>
-            Fazer o fork do repositório oficial (
+            Fazer o fork do repositório oficial 
             <Link href="https://github.com/codante-io/mp-hackathon-olimpiadas/fork" className="text-secondary underline">
               https://github.com/codante-io/mp-hackathon-olimpiadas/fork
             </Link>
-            )
+            
           </li>
           <li>
             Clicar em <strong>"Verificar fork"</strong>
@@ -67,7 +67,7 @@ const Page = () => {
           </li>
         </ol>
         <p className="mb-4">
-          📺 Você pode ver um{" "}
+          📺 Você pode ver um
           <Link href="https://codante.io/workshops/resolucao-pagina-de-faq/participando-do-mini-projeto-no-codante" className="text-secondary underline">
             tutorial em vídeo sobre esse passo-a-passo aqui
           </Link>
@@ -82,16 +82,16 @@ const Page = () => {
           por meio da nossa API.
         </p>
         <p>
-          🔗 Link da API aqui:{" "}
+          🔗 Link da API aqui:
           <Link href="https://docs.apis.codante.io/olympic-games" className="text-secondary underline">
             https://docs.apis.codante.io/olympic-games
           </Link>
         </p>
         <p>
           Use sua criatividade para pensar em uma solução interessante. Temos
-          algumas sugestões (
+          algumas sugestões 
           <em>mas fique à vontade para criar o que você quiser</em>
-          ):
+          :
         </p>
         <ul className="list-disc list-inside mb-4">
           <li>Bolão de resultados</li>

@@ -43,7 +43,7 @@ const GamePage = ({ data }) => {
               <div className="flex my-1 justify-between p-2 glass bg-primary">
                 <div className="avatar">
                   <div className="mask mask-squircle w-8">
-                    <img src={competitors.country_flag_url} />
+                    <Image src={competitors.country_flag_url} width={500} height={300}  alt='Imagens dos paises'/>
                   </div>
                 </div>
                 <div>{competitors.competitor_name}</div>

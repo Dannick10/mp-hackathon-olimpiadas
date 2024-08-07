@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 import { getCountryData } from "../../services/olympics";
 import { IconeBestGlobal } from "../../icons/icons";
@@ -40,7 +41,7 @@ const BestRankGlobal = () => {
                         <IconeBestGlobal position={medal.rank} />
                       </span>
                   <div className="w-16 rounded-full">
-                    <img src={medal.flag_url} alt={medal.name} />
+                    <Image src={medal.flag_url} width={500} height={300}  alt={medal.name} />
                   </div>
                 </div>
               </div>

@@ -55,6 +55,7 @@ const Disciplines = () => {
             {groupedCategories[letter].map((discipline) => (
               <div className="sticky top-0">
               <Card
+              key={discipline.id}
                 name={discipline.name}
                 imgLight={discipline.pictogram_url}
                 imgDark={discipline.pictogram_url_dark}

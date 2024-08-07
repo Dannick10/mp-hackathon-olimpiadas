@@ -13,13 +13,18 @@ const GamePage = ({ data }) => {
   return (
     <div className="card bg-base-200 image-full w-96 shadow-xl m-4">
       <figure>
-        <img src={data.discipline_pictogram} alt="Shoes" />
+        <Image
+          src={data.discipline_pictogram}
+          width={500}
+          height={300}
+          alt={data.discipline_name}
+        />
       </figure>
       <div className="card-body flex justify-between">
         <h2 className="card-title">{data.detailed_event_name}</h2>
-          <div className="badge">
-            <p>{endDate}</p>
-          </div>
+        <div className="badge">
+          <p>{endDate}</p>
+        </div>
         <div className="card-side flex flex-col justify-between items-center">
           <div className="card-actions flex items-center justify-between gap-2 w-full">
             <TenisIcone />

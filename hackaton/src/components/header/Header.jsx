@@ -13,6 +13,16 @@ const Header = () => {
     <div className="flex-none">
       <ButtonHamburguer />
     </div>
+    <ul className="hidden md:flex gap-8  justify-around  text-xl text-center font-semibold text-primary">
+            <li className="hover:text-secondary cursor-pointer">
+            world of the olympics
+            </li>
+            <li className="hover:text-secondary cursor-pointer">Competitions</li>
+            <li className="hover:text-secondary cursor-pointer">
+            Ratings
+            </li>
+            <li className="hover:text-secondary cursor-pointer">Athletes</li>
+          </ul>
   </div>
   )
 }

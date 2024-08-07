@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import { getDisciplineData } from "../../services/olympics";
 import Title from "../Title";
 import Card from "../Card";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Mousewheel } from "swiper/modules";
 
 const Disciplines = () => {
   const [data, setData] = useState([]);
@@ -24,7 +26,7 @@ const Disciplines = () => {
   let category = [];
 
   if (data !== 0) {
-    data.map((names) => category.push(names));
+    data.map((name) => category.push(name));
   }
   const groupByInitialLetter = (categories) => {
     return categories.reduce((acc, category) => {
@@ -35,30 +37,31 @@ const Disciplines = () => {
       acc[initialLetter].push(category);
       return acc;
     }, {});
+    s;
   };
 
   const groupedCategories = groupByInitialLetter(data);
 
   return (
-    <div className="flex flex-col gap-3 m-8 p-7">
+    <div className="flex flex-col justify-center items-center ">
       {Object.keys(groupedCategories)
         .sort()
-        .map((letter) => (
-          <div key={letter} className="relative flex flex-col gap-2">
-            <div>
+        .map((letter, index) => (
+          <div className="relative flex flex-col gap-2">
+            <div className="glass flex justify-center rounded-md  z-10 sticky top-24">
               <Title letter={letter} />
             </div>
 
-            <div className="flex flex-col flex-wrap gap-4">
-              {groupedCategories[letter].map((discipline) => (
-                <Card
-                  key={discipline.id}
-                  name={discipline.name}
-                  imgLight={discipline.pictogram_url}
-                  imgDark={discipline.pictogram_url_dark}
-                />
-              ))}
-            </div>
+            {groupedCategories[letter].map((discipline) => (
+              <div className="sticky top-0">
+              <Card
+                name={discipline.name}
+                imgLight={discipline.pictogram_url}
+                imgDark={discipline.pictogram_url_dark}
+                index={index}
+              />
+              </div>
+            ))}
           </div>
         ))}
     </div>

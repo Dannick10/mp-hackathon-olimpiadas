@@ -3,9 +3,6 @@ import Image from "next/image";
 import { ArenaIcone, IconeDate, TenisIcone } from "../../icons/icons";
 
 const GameEvents = ({ data }) => {
-
-  console.log(data)
-
   const getImage = data.discipline_name.split(" ").join("");
 
   return (

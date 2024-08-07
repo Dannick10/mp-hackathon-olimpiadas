@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-const Card = ({ imgLight,imgDark, name }) => {
+const Card = ({ imgLight,imgDark, name, index }) => {
   
   return (
     <>
-      <div className="relative flex  items-center text-gray-700 bg-clip-border rounded-sm max-w-80 p-1 hover:bg-black hover:pl-4 hover:text-gray-200 transition-all cursor-pointer">
-        <div className="text-center">
-          <h4 className="font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 ">
-            {name}
-          </h4>
-        </div>
-        <div className="relative flex justify-end flex-1 overflow-hidden bg-clip-border rounded-xl">
-          <Image width={50} height={50} src={imgDark}  alt="profile-picture" />
-        </div>
-      </div>
+      <div className={`card glass ${index % 2? 'bg-blue-600' : index % 3 ? 'bg-green-600' : 'bg-red-600'} w-80 transition-colors md:flex-row md:w-[40em] cursor-pointer hover:brightness-105`}>
+  <figure>
+    <img
+      src={imgDark}
+      alt="car!" />
+  </figure>
+  <div className="card-body flex-col items-center justify-between">
+    <h2 className="card-title text-base-100 flex-1">{name}</h2>
+
+  </div>
+</div>
     </>
   );
 };

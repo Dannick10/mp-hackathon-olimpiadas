@@ -8,10 +8,10 @@ const ButtonHamburguer = () => {
 
   return (
     <>
-      <label className="btn btn-circle bg-none border-none fill-none swap swap-rotat z-20" onClick={toggle}>
+      <label className="btn btn-circle bg-none border-none fill-none swap swap-rotat z-20 bg-blue-600 hover:bg-blue-500 md:hidden" onClick={toggle}>
         {!isDrawerOpen ? (
           <svg
-            className="swap-off fill-current text-red-600"
+            className="swap-off fill-current text-white"
             xmlns="http://www.w3.org/2000/svg"
             width="42"
             height="42"
@@ -21,7 +21,7 @@ const ButtonHamburguer = () => {
           </svg>
         ) : (
           <svg
-            className="swap-rotate rotate-90 fill-current text-red-600"
+            className="swap-rotate rotate-90 fill-current text-white"
             xmlns="http://www.w3.org/2000/svg"
             width="42"
             height="42"
@@ -34,18 +34,18 @@ const ButtonHamburguer = () => {
 
       {isDrawerOpen && (
         <div
-          className="absolute flex justify-center right-0 top-0 h-screen bg-gray-100 p-2 w-80 cursor-auto"
+          className="absolute flex justify-center right-0 top-0 h-screen bg-base-100 border-l-2 border-l-base-200 p-2 w-80 cursor-auto"
           onClick={toggle}
         >
           <ul className="space-y-8 py-20 text-xl text-center font-semibold text-gray-800">
-            <li className="hover:text-red-500 cursor-pointer">
+            <li className="hover:text-secondary cursor-pointer">
             world of the olympics
             </li>
-            <li className="hover:text-red-500 cursor-pointer">Competitions</li>
-            <li className="hover:text-red-500 cursor-pointer">
+            <li className="hover:text-secondary cursor-pointer">Competitions</li>
+            <li className="hover:text-secondary cursor-pointer">
             Ratings
             </li>
-            <li className="hover:text-red-500 cursor-pointer">Athletes</li>
+            <li className="hover:text-secondary cursor-pointer">Athletes</li>
           </ul>
         </div>
       )}

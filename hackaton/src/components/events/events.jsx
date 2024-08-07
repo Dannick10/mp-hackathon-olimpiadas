@@ -20,7 +20,7 @@ const Events = () => {
     const fetchData = async () => {
       Setloading(true)
       try {
-        const result = await getEventsData(`?date=${formatDate}`);
+        const result = await getEventsData(``);
         setData(Object.values(result)[0]);
       } catch (error) {
         console.error(error);
@@ -31,12 +31,10 @@ const Events = () => {
     fetchData();
   }, [formatDate]);
 
-  console.log(data)
-
   return (
-    <div className=" gap-3 relative w-full">
+    <div className=" gap-3 min-h-[28em] relative w-full bg-gray-800">
       {loading? 
-      <div className="flex items-center justify-center bg-gray-800 h-[28em] p-8">
+      <div className="flex items-center justify-center bg-gray-800 h-[28em] md:h-[34em] p-8">
       <span className="loading loading-bars m-auto w-20 text-blue-800"></span> 
       </div>
       :

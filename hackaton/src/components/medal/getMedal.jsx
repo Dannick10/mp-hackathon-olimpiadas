@@ -13,7 +13,7 @@ const BestRankGlobal = () => {
     const fetchData = async () => {
       Setloading(true);
       try {
-        const result = await getCountryData();
+        const result = await getCountryData('');
         setData(Object.values(result)[0]);
       } catch (error) {
         console.error(error);

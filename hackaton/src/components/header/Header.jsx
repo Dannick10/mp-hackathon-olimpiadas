@@ -23,17 +23,21 @@ const Header = () => {
     </div>
     <ul className={'hidden md:flex gap-8  justify-around  text-xl text-center font-semibold '}>
           <Link href={'/'}>
-            <li className={`hover:text-blue-600 cursor-pointer text-primary ${pathname === '/' ? 'text-accent' : ''} `}>
-            world of the olympics
+            <li className={`hover:text-blue-600 cursor-pointer text-primary`}>
+            Home
             </li>
           </Link>
           <Link href={'/events'}>
             <li className="hover:text-blue-600 cursor-pointer">Events</li>
           </Link>
+          <Link href={'/medals'} >
             <li className="hover:text-blue-600 cursor-pointer">
             Medals
             </li>
+          </Link>
+          <Link href={'https://docs.apis.codante.io/'} target='_blank'>
             <li className="hover:text-blue-600 cursor-pointer">APICODANTE</li>
+          </Link>
           </ul>
   </div>
   )

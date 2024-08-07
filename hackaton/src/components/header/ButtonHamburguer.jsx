@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 const ButtonHamburguer = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -37,15 +38,23 @@ const ButtonHamburguer = () => {
           className="absolute flex justify-center right-0 top-0 h-screen bg-base-100 border-l-2 border-l-base-200 p-2 w-80 cursor-auto"
           onClick={toggle}
         >
-          <ul className="space-y-8 py-20 text-xl text-center font-semibold text-gray-800">
-            <li className="hover:text-secondary cursor-pointer">
-            world of the olympics
+          <ul className="py-20 text-xl text-center font-semibold text-gray-800">
+          <Link href={'/'}>
+            <li className={`hover:text-blue-600 cursor-pointer text-primary my-8`}>
+            Home
             </li>
-            <li className="hover:text-secondary cursor-pointer">Competitions</li>
-            <li className="hover:text-secondary cursor-pointer">
-            Ratings
+          </Link>
+          <Link href={'/events'}>
+            <li className="hover:text-blue-600 cursor-pointer my-8">Events</li>
+          </Link>
+          <Link href={'/medals'} >
+            <li className="hover:text-blue-600 cursor-pointer my-8">
+            Medals
             </li>
-            <li className="hover:text-secondary cursor-pointer">Athletes</li>
+          </Link>
+          <Link href={'https://docs.apis.codante.io/'} target='_blank'>
+            <li className="hover:text-blue-600 cursor-pointer my-8">APICODANTE</li>
+          </Link>
           </ul>
         </div>
       )}

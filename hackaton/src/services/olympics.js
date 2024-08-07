@@ -1,7 +1,7 @@
 import fetchFromApi from "./api";
 
-export async function getCountryData() {
-        return await fetchFromApi('/countries')
+export async function getCountryData(filter) {
+        return await fetchFromApi(`/countries${filter}`)
 }
 export async function getDisciplineData() {
         return await fetchFromApi('/disciplines')

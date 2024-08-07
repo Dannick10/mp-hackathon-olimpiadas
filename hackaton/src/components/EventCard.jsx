@@ -3,7 +3,6 @@ import CategoryDisciplinesCard from "./categoryDisciplines";
 import Competitor from "./Competitor";
 
 const EventCard = ({ date }) => {
-  console.log(date);
 
   return (
     <div className="flex justify-between w-full text-gray-900 relative flex-wrap p-2 ">

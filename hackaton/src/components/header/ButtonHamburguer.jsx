@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import ThemeController from "../themeController";
 
 const ButtonHamburguer = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -9,7 +10,13 @@ const ButtonHamburguer = () => {
 
   return (
     <>
-      <label className="btn btn-circle bg-none border-none fill-none swap swap-rotat z-20 bg-blue-600 hover:bg-blue-500 md:hidden" onClick={toggle}>
+      <div className="px-2 md:hidden">
+        <ThemeController />
+      </div>
+      <label
+        className="btn btn-circle bg-none border-none fill-none swap swap-rotat z-20 bg-blue-600 hover:bg-blue-500 md:hidden"
+        onClick={toggle}
+      >
         {!isDrawerOpen ? (
           <svg
             className="swap-off fill-current text-white"
@@ -32,29 +39,39 @@ const ButtonHamburguer = () => {
           </svg>
         )}
       </label>
-
       {isDrawerOpen && (
         <div
           className="absolute flex justify-center right-0 top-0 h-screen bg-base-100 border-l-2 border-l-base-200 p-2 w-80 cursor-auto"
           onClick={toggle}
         >
-          <ul className="py-20 text-xl text-center font-semibold text-gray-800">
-          <Link href={'/'}>
-            <li className={`hover:text-blue-600 cursor-pointer text-primary my-8`}>
-            Home
-            </li>
-          </Link>
-          <Link href={'/events'}>
-            <li className="hover:text-blue-600 cursor-pointer my-8">Events</li>
-          </Link>
-          <Link href={'/medals'} >
-            <li className="hover:text-blue-600 cursor-pointer my-8">
-            Medals
-            </li>
-          </Link>
-          <Link href={'https://docs.apis.codante.io/'} target='_blank'>
-            <li className="hover:text-blue-600 cursor-pointer my-8">APICODANTE</li>
-          </Link>
+          <ul className="py-20 text-xm text-center font-semibold text-gray-800">
+            <Link href={"/"}>
+              <li
+                className={`hover:text-blue-600 cursor-pointer text-primary my-8`}
+              >
+                Home
+              </li>
+            </Link>
+            <Link href={"/about"}>
+              <li className={`hover:text-blue-600 cursor-pointer text-primary`}>
+                About
+              </li>
+            </Link>
+            <Link href={"/events"}>
+              <li className="hover:text-blue-600 cursor-pointer my-8 text-primary">
+                Events
+              </li>
+            </Link>
+            <Link href={"/medals"}>
+              <li className="hover:text-blue-600 cursor-pointer my-8 text-primary">
+                Medals
+              </li>
+            </Link>
+            <Link href={"https://docs.apis.codante.io/"} target="_blank">
+              <li className="hover:text-blue-600 cursor-pointer my-8 text-primary">
+                APICODANTE
+              </li>
+            </Link>
           </ul>
         </div>
       )}

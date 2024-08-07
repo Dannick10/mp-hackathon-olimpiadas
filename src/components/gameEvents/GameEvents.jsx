@@ -2,13 +2,11 @@ import React from "react";
 import { ArenaIcone, IconeDate, TenisIcone } from "../../icons/icons";
 
 const GameEvents = ({ data }) => {
-  const getImage = data.discipline_name.split(" ").join("");
-
   return (
     <div
       className="relative h-[28em]"
       style={{
-        backgroundImage: `url(./category/${getImage}.jpg)`,
+        backgroundImage: `url(${data.discipline_pictogram})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

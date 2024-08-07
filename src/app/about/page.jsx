@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <div className="min-h-screen flex my-8 text-center flex-col gap-2">
       <h2 className="text-xl text-primary">CODANTESPORTS</h2>
@@ -123,8 +123,8 @@ const page = () => {
         </p>
         
         <h3 className="text-xl font-bold mt-4 mb-2">❓ Perguntas frequentes</h3>
-        <details className="collapse collapse-plus  mb-4 bg-base-200 border-base-300 border-2">
-        <input type="radio" name="my-accordion-3"   />
+        <details className="collapse collapse-plus mb-4 bg-base-200 border-base-300 border-2">
+          <input type="radio" name="my-accordion-3" />
           <summary className="collapse-title font-semibold">
             Quais tecnologias posso usar no desenvolvimento da minha aplicação?
           </summary>
@@ -139,7 +139,7 @@ const page = () => {
         </details>
 
         <details className="collapse collapse-plus mb-4 bg-base-200 border-base-300 border-2">
-        <input type="radio" name="my-accordion-3" />
+          <input type="radio" name="my-accordion-3" />
           <summary className="collapse-title font-semibold">
             Posso usar outras fontes de dados além da API fornecida?
           </summary>
@@ -152,7 +152,7 @@ const page = () => {
           </div>
         </details>
         <details className="collapse collapse-plus mb-4 bg-base-200 border-base-300 border-2">
-        <input type="radio" name="my-accordion-3"  />
+          <input type="radio" name="my-accordion-3" />
           <summary className="collapse-title font-semibold">
             Posso fazer em dupla ou com mais pessoas?
           </summary>
@@ -174,16 +174,16 @@ const page = () => {
         <span className="badge badge-primary m-2">SWIPERJS</span>
         <span className="badge badge-primary m-2">APICODANTE</span>
       </div>
-      <div className="mt-8 flex  gap-2 justify-center items-end">
-          <Link href={'https://github.com/Dannick10'} target="_blank">
-              <div className="btn btn-primary">GITHUB</div>
-          </Link>
-          <Link href={'https://www.linkedin.com/in/futurodevdaniel/'} target="_blank">
+      <div className="mt-8 flex gap-2 justify-center items-end">
+        <Link href={'https://github.com/Dannick10'} target="_blank">
+          <div className="btn btn-primary">GITHUB</div>
+        </Link>
+        <Link href={'https://www.linkedin.com/in/futurodevdaniel/'} target="_blank">
           <div className="btn btn-primary">LINKEDIN</div>
-          </Link>
+        </Link>
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;

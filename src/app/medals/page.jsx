@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { getCountryData } from "../../services/olympics";
 import { IconeBestGlobal, Arrow } from "../../icons/icons";
+import Image from "next/image";
 
 const Page = () => {
   const [data, setData] = useState([]);
@@ -60,7 +61,7 @@ const Page = () => {
                   <td>
                     <div className="avatar">
                       <div className="mask mask-squircle h-12 w-12">
-                        <img src={medal.flag_url} alt={medal.name} />
+                        <Image src={medal.flag_url} width={500} height={300} alt={medal.name} />
                         <span className="absolute right-0 -bottom-2">
                           <IconeBestGlobal position={medal.rank} />
                         </span>

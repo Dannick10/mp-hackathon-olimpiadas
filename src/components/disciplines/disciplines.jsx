@@ -21,11 +21,6 @@ const Disciplines = () => {
     fetchData();
   }, []);
 
-  let category = [];
-
-  if (data !== 0) {
-    data.map((name) => category.push(name));
-  }
   const groupByInitialLetter = (categories) => {
     return categories.reduce((acc, category) => {
       const initialLetter = category.name.charAt(0).toUpperCase();
@@ -35,31 +30,30 @@ const Disciplines = () => {
       acc[initialLetter].push(category);
       return acc;
     }, {});
-    s;
   };
 
   const groupedCategories = groupByInitialLetter(data);
 
   return (
-    <div className="flex flex-col justify-center items-center ">
+    <div className="flex flex-col justify-center items-center">
       {Object.keys(groupedCategories)
         .sort()
-        .map((letter, index) => (
-          <div className="relative flex flex-col gap-2">
-            <div className="glass flex justify-center rounded-md  z-10 sticky top-24">
-              <Title letter={letter} />
+        .map((letter) => (
+          <div className="relative flex flex-col gap-2" key={letter}>
+            <div className="glass flex justify-center rounded-md z-10 sticky top-24">
+              <Title key={letter} letter={letter} />
             </div>
 
             {groupedCategories[letter].map((discipline) => (
-              <div className="sticky top-0">
-              <Card
-              key={discipline.id}
-                name={discipline.name}
-                imgLight={discipline.pictogram_url}
-                imgDark={discipline.pictogram_url_dark}
-                index={index}
-                id={discipline.id}
-              />
+              <div className="sticky top-0" key={discipline.id}>
+                <Card
+                  key={discipline.id}
+                  name={discipline.name}
+                  imgLight={discipline.pictogram_url}
+                  imgDark={discipline.pictogram_url_dark}
+                  index={groupedCategories[letter].indexOf(discipline)}
+                  id={discipline.id}
+                />
               </div>
             ))}
           </div>

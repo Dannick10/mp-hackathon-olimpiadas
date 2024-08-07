@@ -5,7 +5,6 @@ import Events from "../components/events/events";
 import TitleComponent from "../components/Title/TitleComponent";
 import { IconeCompetition, IconeMedal } from "../icons/icons";
 import GetMedals from "../components/medal/getMedal";
-import Competitor from "../components/competitor/Competitor";
 
 
 export default function Home() {
@@ -40,7 +39,6 @@ export default function Home() {
         <TitleComponent title={"Games"}>
 
         </TitleComponent>
-          <Competitor />
           <Disciplines />
       </section>
     </main>

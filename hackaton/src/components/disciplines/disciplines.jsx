@@ -59,6 +59,7 @@ const Disciplines = () => {
                 imgLight={discipline.pictogram_url}
                 imgDark={discipline.pictogram_url_dark}
                 index={index}
+                id={discipline.id}
               />
               </div>
             ))}

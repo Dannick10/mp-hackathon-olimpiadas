@@ -1,3 +1,7 @@
+
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+
 export function LogoOlympic() {
   return (
     <svg
@@ -214,5 +218,13 @@ export function IconeBestGlobal({position}){
   </svg>
   }
             </>
+  )
+}
+
+export function Arrow({direction}) {
+   return( 
+    <>
+      {direction ? <IoIosArrowBack /> : <IoIosArrowForward />}
+    </>
   )
 }

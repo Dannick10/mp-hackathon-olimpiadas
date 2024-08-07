@@ -11,8 +11,8 @@ export async function getEventsData(date) {
         return await fetchFromApi(`/events${date}`)
 }
 
-export async function getEventsAllFilter() {
-        return await fetchFromApi(`/events`)
+export async function getEventsAllFilter(filter) {
+        return await fetchFromApi(`/events${filter}`)
 }
 
 export async function getVenuesData() {

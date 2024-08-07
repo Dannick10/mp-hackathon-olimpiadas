@@ -20,7 +20,7 @@ const Events = () => {
     const fetchData = async () => {
       Setloading(true)
       try {
-        const result = await getEventsData(``);
+        const result = await getEventsData(`?date=${formatDate}`);
         setData(Object.values(result)[0]);
       } catch (error) {
         console.error(error);

@@ -4,7 +4,7 @@ import { ArenaIcone, IconeDate, TenisIcone } from "../../icons/icons";
 
 const GameEvents = ({ data }) => {
   const getImage = data.discipline_name.split(" ").join("");
-
+  
   return (
     <div
       className="relative h-[28em]"

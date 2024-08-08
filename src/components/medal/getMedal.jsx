@@ -2,98 +2,97 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-
 import { getCountryData } from "../../services/olympics";
 import { IconeBestGlobal } from "../../icons/icons";
 
 const BestRankGlobal = () => {
   const [data, setData] = useState([]);
-  const [loading, Setloading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-      Setloading(true);
+      setLoading(true);
       try {
         const result = await getCountryData('');
         setData(Object.values(result)[0]);
       } catch (error) {
         console.error(error);
       }
-      Setloading(false);
+      setLoading(false);
     };
 
     fetchData();
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-[40em]">
+    <div className="flex flex-col justify-center items-center my-4 min-h-[20em]">
       {loading && <span className="loading loading-bars loading-lg text-blue-600"></span>}
-      {data &&
-        data.slice(0, 3).map((medal) => (
-          <div
-            className="stats shadow grid grid-cols-2 md:max-w-[50em] m-auto my-6"
-            key={data.id}
-          >
-            <div className="stat flex flex-1 items-center">
-              <div className="stat-figure text-secondary">
-                <div className="avatar">
-                      <span className="absolute right-0 -bottom-2">
-                        <IconeBestGlobal position={medal.rank} />
-                      </span>
-                  <div className="w-16 rounded-full">
-                    <Image src={medal.flag_url} width={500} height={300}  alt={medal.name} />
-                  </div>
-                </div>
-              </div>
-              <div className="stat-value">
-                <p>{medal.rank}º</p>
-              </div>
-              <div className="flex flex-col justify-center items-center">
-                <div className="stat-title text-wrap">
-                  <p>{medal.name}</p>
-                </div>
-                <div className="stat-desc text-secondary">
-                  <p>{medal.total_medals} total medals</p>
-                </div>
-              </div>
-              <div className="stat-figure text-primary hidden md:block">
-                <p className="badge  badge-primary">{medal.continent}</p>
-              </div>
-            </div>
-
-            <div className="stat">
-              <div className="stat-title">Medals</div>
-              <div className="flex gap-2 justify-between">
-                <div className="flex flex-col justify-center items-center">
-                  
-                  <div className="stat-value text-[#FCBE1F]">
-                    {medal.gold_medals}
-                  </div>
-                  <div className="stat-desc">
-                    GOLD
-                  </div>
-                </div>
-
-                <div className="flex flex-col justify-center items-center">
-                  <div className="stat-value text-[#99AAB5]">
-                    {medal.silver_medals}
-                  </div>
-                  <div className="stat-desc">
-                    SILVER
-                  </div>
-                </div>
-                <div className="flex flex-col justify-center items-center">
-                <div className="stat-value text-[#E64C3C]">
-                  {medal.bronze_medals}
-                </div>
-                <div className="stat-desc">
-                  BRONZE
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
+      {data.length > 0 && (
+        <div className="w-full overflow-x-auto">
+          <table className="table w-full min-w-max">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Country</th>
+                <th>Rank</th>
+                <th>Total Medals</th>
+                <th>Gold</th>
+                <th>Silver</th>
+                <th>Bronze</th>
+                <th className="hidden md:table-cell">Continent</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.slice(0, 3).map((medal) => (
+                <tr key={medal.id}>
+                  <td>
+                    <div className="avatar">
+                      <div className="mask mask-squircle h-12 w-12 relative">
+                        <Image
+                          src={medal.flag_url}
+                          width={500}
+                          height={300}
+                          alt={medal.name}
+                          className="w-full h-full object-cover"
+                        />
+                        <span className="absolute right-0 -bottom-2">
+                          <IconeBestGlobal position={medal.rank} />
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="flex items-center gap-3">
+                      <div>
+                        <div className="font-bold">{medal.name}</div>
+                        <div className="text-sm opacity-50 hidden md:block">{medal.country}</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>{medal.rank}º</td>
+                  <td className="">{medal.total_medals}</td>
+                  <td className="text-primary">{medal.gold_medals}</td>
+                  <td className="text-primary">{medal.silver_medals}</td>
+                  <td className="text-primary">{medal.bronze_medals}</td>
+                  <td className="hidden md:table-cell">{medal.continent}</td>
+                </tr>
+              ))}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th></th>
+                <th>Country</th>
+                <th>Rank</th>
+                <th>Total Medals</th>
+                <th>Gold</th>
+                <th>Silver</th>
+                <th>Bronze</th>
+                <th className="hidden md:table-cell">Continent</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      )}
     </div>
   );
 };

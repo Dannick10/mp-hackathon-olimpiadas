@@ -36,68 +36,76 @@ const Page = () => {
   };
 
   return (
-    <div className="overflow-x-auto min-h-[40em] flex flex-col justify-center items-center">
+    <div className="min-h-screen flex flex-col justify-center items-center overflow-hidden">
       {loading && (
         <span className="loading loading-bars loading-lg text-blue-600"></span>
       )}
       {data.length > 0 && (
         <>
-          <table className="table" key={data.id}>
-            <thead>
-              <tr>
-                <th></th>
-                <th>Country</th>
-                <th>Rank</th>
-                <th>Total Medals</th>
-                <th>Gold</th>
-                <th>Silver</th>
-                <th>Bronze</th>
-                <th>Continent</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((medal) => (
-                <tr key={medal.id}>
-                  <td>
-                    <div className="avatar">
-                      <div className="mask mask-squircle h-12 w-12">
-                        <Image src={medal.flag_url} width={500} height={300} alt={medal.name} />
-                        <span className="absolute right-0 -bottom-2">
-                          <IconeBestGlobal position={medal.rank} />
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div className="flex items-center gap-3">
-                      <div>
-                        <div className="font-bold">{medal.name}</div>
-                        <div className="text-sm opacity-50">{medal.country}</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>{medal.rank}º</td>
-                  <td className="">{medal.total_medals}</td>
-                  <td className="text-primary ">{medal.gold_medals}</td>
-                  <td className="text-primary">{medal.silver_medals}</td>
-                  <td className="text-primary ">{medal.bronze_medals}</td>
-                  <td>{medal.continent}</td>
+          <div className="w-full overflow-x-auto">
+            <table className="table w-full min-w-max" key={data.id}>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Country</th>
+                  <th>Rank</th>
+                  <th>Total Medals</th>
+                  <th>Gold</th>
+                  <th>Silver</th>
+                  <th>Bronze</th>
+                  <th className="hidden md:table-cell">Continent</th>
                 </tr>
-              ))}
-            </tbody>
-            <tfoot>
-              <tr>
-                <th></th>
-                <th>Country</th>
-                <th>Rank</th>
-                <th>Total Medals</th>
-                <th>Gold</th>
-                <th>Silver</th>
-                <th>Bronze</th>
-                <th>Continent</th>
-              </tr>
-            </tfoot>
-          </table>
+              </thead>
+              <tbody>
+                {data.map((medal) => (
+                  <tr key={medal.id}>
+                    <td>
+                      <div className="avatar">
+                        <div className="mask mask-squircle h-12 w-12 relative">
+                          <Image
+                            src={medal.flag_url}
+                            width={500}
+                            height={300}
+                            alt={medal.name}
+                            className="w-full h-full object-cover"
+                          />
+                          <span className="absolute right-0 -bottom-2">
+                            <IconeBestGlobal position={medal.rank} />
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div className="flex items-center gap-3">
+                        <div>
+                          <div className="font-bold">{medal.name}</div>
+                          <div className="text-sm opacity-50 hidden md:block">{medal.country}</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>{medal.rank}º</td>
+                    <td className="">{medal.total_medals}</td>
+                    <td className="text-primary">{medal.gold_medals}</td>
+                    <td className="text-primary">{medal.silver_medals}</td>
+                    <td className="text-primary">{medal.bronze_medals}</td>
+                    <td className="hidden md:table-cell">{medal.continent}</td>
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <th>Country</th>
+                  <th>Rank</th>
+                  <th>Total Medals</th>
+                  <th>Gold</th>
+                  <th>Silver</th>
+                  <th>Bronze</th>
+                  <th className="hidden md:table-cell">Continent</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
 
           <div className="pagination flex justify-center items-center gap-2 mt-4">
             <button
@@ -117,7 +125,7 @@ const Page = () => {
               onClick={() => handlePageChange(page + 1)}
               disabled={page === totalPages}
             >
-              <Arrow  />
+              <Arrow />
             </button>
           </div>
         </>

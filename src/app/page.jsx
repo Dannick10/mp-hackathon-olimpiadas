@@ -6,7 +6,6 @@ import TitleComponent from "../components/Title/TitleComponent";
 import { IconeCompetition, IconeMedal } from "../icons/icons";
 import GetMedals from "../components/medal/getMedal";
 
-
 export default function Home() {
   return (
     <main className="min-h-screen w-full">
@@ -14,7 +13,6 @@ export default function Home() {
         <TitleComponent title={"Competitions now"}>
           <div className="flex absolute top-5 right-0">
             <IconeCompetition />
-      
           </div>
         </TitleComponent>
         <div className="flex flex-col items-center justify-center">
@@ -31,15 +29,12 @@ export default function Home() {
           </div>
         </TitleComponent>
 
-      <GetMedals />
-  
+        <GetMedals />
       </section>
 
       <section>
-        <TitleComponent title={"Games"}>
-
-        </TitleComponent>
-          <Disciplines />
+        <TitleComponent title={"Games"}></TitleComponent>
+        <Disciplines />
       </section>
     </main>
   );

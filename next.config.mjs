@@ -6,6 +6,7 @@ const nextConfig = {
       "dummyimage.com",
     ],
   },
+  
 };
 
 export default nextConfig;
